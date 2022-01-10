@@ -13,17 +13,20 @@ namespace consoleTester
             string line = Console.ReadLine();
             string reversed = StrRevFunction(line);
             do {
-              if (line == StrRevFunction(line)){
+              if (line == StrRevFunction(line))
+              {
                 Console.WriteLine($"{iterations} {line}: Palindrome");
-              } else {
-              long inputNumber = Convert.ToInt64(line);
-              Console.WriteLine($"Input: {inputNumber}");
-              Console.WriteLine($"Reversed: {StrRevFunction(line)}");
-              long addedResult = inputNumber + Convert.ToInt64(StrRevFunction(line));
-              Console.WriteLine($"Added result: {addedResult}");
-              string nextNumber = addedResult.ToString();
-              line = nextNumber;
-              iterations++;
+              }
+              else
+              {
+                long inputNumber = Convert.ToInt64(line);
+                Console.WriteLine($"Input: {inputNumber}");
+                Console.WriteLine($"Reversed: {StrRevFunction(line)}");
+                long addedResult = inputNumber + Convert.ToInt64(StrRevFunction(line));
+                Console.WriteLine($"Added result: {addedResult}");
+                string nextNumber = addedResult.ToString();
+                line = nextNumber;
+                iterations++;
               }
             } while (line != StrRevFunction(line));
           Console.WriteLine($"{iterations} {line}");
