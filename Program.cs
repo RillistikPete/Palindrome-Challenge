@@ -8,28 +8,27 @@ namespace consoleTester
     {
         static void Main(string[] args)
         {
-          int iterations = 0;
+            int iterations = 0;
             Console.WriteLine("Enter number");
-            string line = Console.ReadLine();
-            string reversed = StrRevFunction(line);
+            string input = Console.ReadLine();
+            string reversed = StrRevFunction(input);
             do {
-              if (line == StrRevFunction(line))
+              if (input == StrRevFunction(input))
               {
-                Console.WriteLine($"{iterations} {line}: Palindrome");
+                Console.WriteLine($"{iterations} {input}: Palindrome");
               }
               else
               {
-                long inputNumber = Convert.ToInt64(line);
-                Console.WriteLine($"Input: {inputNumber}");
-                Console.WriteLine($"Reversed: {StrRevFunction(line)}");
-                long addedResult = inputNumber + Convert.ToInt64(StrRevFunction(line));
+                long inputNumber = Convert.ToInt64(input);
+                Console.WriteLine($"Input: {inputNumber}, Reversed: {StrRevFunction(input)}");
+                long addedResult = inputNumber + Convert.ToInt64(StrRevFunction(input));
                 Console.WriteLine($"Added result: {addedResult}");
                 string nextNumber = addedResult.ToString();
-                line = nextNumber;
+                input = nextNumber;
                 iterations++;
               }
-            } while (line != StrRevFunction(line));
-          Console.WriteLine($"{iterations} {line}");
+            } while (input != StrRevFunction(input));
+            Console.WriteLine($"{iterations} {input}");
         }
 
         public static string StrRevFunction(string inputStr) {
